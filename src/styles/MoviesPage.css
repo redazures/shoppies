@@ -3,6 +3,44 @@ div.searchWrapper{
     border-style: double;
     border-color: var(--secondary);
     text-align: left;
-    height: 35%;
     margin: 35px;
+    border-radius: 15px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.searchInput{
+    width: 100%;
+    border: style;
+    border-radius: 12px;
+    background-color: var(--light);
+}
+
+h1.header{
+    background-color: var(--primary);
+    border-color: var(--secondary);
+    margin: 35px;
+    height: 45px;
+    color: var(--light);
+    border-style: double;
+    border-radius: 15px;
+}
+
+div.output{
+    height:20px;
+
+}
+span{
+    color:var(--light);
+    height:10px;
+}
+
+div.movieContainer{
+    height:calc(100vh - 250px);
+    border-style: double;
+    border-color: var(--secondary);
+    margin: 35px;
+    border-radius: 15px;
 }

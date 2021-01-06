@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { getMovies } from '../api/apiCalls'
-import useApi from '../components/hooks/useApi'
+
+import Header from '../components/Header'
 import SearchBar from '../components/SearchBar'
+import useApi from '../components/hooks/useApi'
+import Container from '../components/Container'
 
 import '../styles/MoviesPage.css'
 
@@ -25,20 +28,30 @@ const data=[
 const MoviesContainer = () =>{
     const [movies, setMovies ] = useState([])
     const populateMovies = useApi(getMovies)
+    const [ search, setSearch ] = useState("")
+    const [ movieQuery, setMovieQuery ] = useState("")
 
-    const populate = async ()=>{
-        const response = await getMovies()
-        console.log(response.data)
+    const populate = ()=>{
+    //     const response = await getMovies()
+    //     console.log(response.data)
+            setMovies(data)
     }
+    
+    useEffect(()=>{
+        populate()
+        console.log("this is running")
+        const timeOutSearch = setTimeout(() => setMovieQuery(search),500);
+        return () => clearTimeout(timeOutSearch)
+    },[search])
 
-  useEffect(()=>{
-    // populateMovies.request()
-  },[])
-
-    console.log(populateMovies.data)
+    console.log(movies)
+    const width = window.innerWidth
     return(
         <div>
-            <SearchBar/>
+            <Header>{width>1000 ? "Shoppies: Why Spaceballs is the best movie of all time" : "Shoppies"}</Header>
+            <SearchBar ssearch={search} setSearch={setSearch} />
+            <div className="output"><span>{movieQuery ? `Searching for ${movieQuery.replace(" ","+")}`: null }</span></div>
+            <Container movies={movies}/>
         </div>
     )
 }

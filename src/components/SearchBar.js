@@ -11,6 +11,8 @@ const SearchBar = ({ search, setSearch }) => (
             placeholder="Search"
             className="searchInput" 
             name="search" 
+            disableUnderline   
+            autoFocus 
             value={ search } 
             onChange={ e => setSearch(e.target.value) }
             startAdornment={
