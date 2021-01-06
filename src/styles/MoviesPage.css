@@ -1,0 +1,8 @@
+div.searchWrapper{
+    background-color: var(--primary);
+    border-style: double;
+    border-color: var(--secondary);
+    text-align: left;
+    height: 35%;
+    margin: 35px;
+}
