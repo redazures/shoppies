@@ -3,7 +3,7 @@ div.searchWrapper{
     border-style: double;
     border-color: var(--secondary);
     text-align: left;
-    margin: 35px;
+    margin: 15px;
     border-radius: 15px;
     height: 25px;
     display: flex;
@@ -21,7 +21,7 @@ div.searchWrapper{
 h1.header{
     background-color: var(--primary);
     border-color: var(--secondary);
-    margin: 35px;
+    margin: 15px;
     height: 45px;
     color: var(--light);
     border-style: double;
@@ -37,10 +37,29 @@ span{
     height:10px;
 }
 
-div.movieContainer{
-    height:calc(100vh - 250px);
+div.bottomContainer{
+    height:calc(100vh - 200px);
     border-style: double;
     border-color: var(--secondary);
-    margin: 35px;
+    margin: 15px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.moviesContainer{
+    
+    height:45%;
+    width: 90%;
+    display:flex;
+    overflow-x: auto;
+    border-style: double;
+    border-color: var(--secondary);
+    border-radius: 15px;  
+}
+
+div.title{
+
 }
