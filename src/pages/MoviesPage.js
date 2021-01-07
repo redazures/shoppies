@@ -4,7 +4,8 @@ import { getMovies } from '../api/apiCalls'
 import Header from '../components/Header'
 import SearchBar from '../components/SearchBar'
 import useApi from '../components/hooks/useApi'
-import Container from '../components/Container'
+import Container from '../components/bottomContainer'
+import QueryContext from "../components/contexts/QueryContext";
 
 import '../styles/moviesPage.css'
 
