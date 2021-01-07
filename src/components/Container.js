@@ -4,10 +4,9 @@ import MoviesContainer from './MoviesContainer'
 const favs = JSON.parse(localStorage.getItem("favs") || "[]");
 
 const Container = ({ movies }) => {
-
     return(
         <div className='bottomContainer'>
-            <MoviesContainer movies={movies} favs={favs} name="Pick A Movie to Nominate"/>
+            <MoviesContainer movies={movies} favs={favs} name="Nominate A Movie"/>
             <MoviesContainer favs={favs} name="Nominated Movies"/>
         </div>
     )

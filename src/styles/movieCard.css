@@ -1,0 +1,35 @@
+@import '../config/colors.css';
+
+.movieCard{
+    background-color: transparent;
+    width: 150px;
+    min-width: 150px;
+    height:85%;
+    margin:10px;
+    border: 1px solid #665b5b;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border-radius: 15px;
+    border-color: var(--secondary);
+    border-style: double;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.cardBottom{
+    width: 100%;
+    background-color: var(--light);
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nominate{
+    width: 100%;
+    background-color: var(--light);
+    border-color: var(--secondary);
+    border-style: double;
+}

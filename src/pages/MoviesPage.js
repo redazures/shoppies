@@ -6,7 +6,7 @@ import SearchBar from '../components/SearchBar'
 import useApi from '../components/hooks/useApi'
 import Container from '../components/Container'
 
-import '../styles/MoviesPage.css'
+import '../styles/moviesPage.css'
 
 const data=[
     {
@@ -44,8 +44,8 @@ const MoviesContainer = () =>{
         return () => clearTimeout(timeOutSearch)
     },[search])
 
-    console.log(movies)
     const width = window.innerWidth
+    console.log(movies)
     return(
         <div>
             <Header>{width>1000 ? "Shoppies: Why Spaceballs is the best movie of all time" : "Shoppies"}</Header>
