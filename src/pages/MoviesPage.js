@@ -4,7 +4,7 @@ import { getMovies } from '../api/apiCalls'
 import Header from '../components/Header'
 import SearchBar from '../components/SearchBar'
 import useApi from '../components/hooks/useApi'
-import Container from '../components/bottomContainer'
+import BottomContainer from '../components/BottomContainer'
 import QueryContext from "../components/contexts/QueryContext";
 
 import '../styles/moviesPage.css'
@@ -28,9 +28,14 @@ const data=[
 
 const MoviesContainer = () =>{
     const [movies, setMovies ] = useState([])
-    const populateMovies = useApi(getMovies)
-    const [ search, setSearch ] = useState("")
     const [ movieQuery, setMovieQuery ] = useState("")
+    const [ search, setSearch ] = useState("")
+
+    const displayCurrent = (name)=>{
+        console.log(name)
+    }
+
+    const populateMovies = useApi(getMovies)
 
     const populate = ()=>{
     //     const response = await getMovies()
@@ -48,12 +53,12 @@ const MoviesContainer = () =>{
     const width = window.innerWidth
     console.log(movies)
     return(
-        <div>
+        <QueryContext.Provider value={{displayCurrent}}>
             <Header>{width>1000 ? "Shoppies: Why Spaceballs is the best movie of all time" : "Shoppies"}</Header>
             <SearchBar ssearch={search} setSearch={setSearch} />
             <div className="output"><span>{movieQuery ? `Searching for ${movieQuery.replace(" ","+")}`: null }</span></div>
-            <Container movies={movies}/>
-        </div>
+            <BottomContainer movies={movies}/>
+        </QueryContext.Provider>
     )
 }
 
