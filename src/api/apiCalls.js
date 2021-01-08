@@ -4,8 +4,7 @@
 
 
 const getMovies = (movieQuery) => {
-  const key=`?apikey=${apiKey}&s=${movieQuery.replace(" ","+")}`
-  console.log(key)
+    const key=`?apikey=${apiKey}&s=${movieQuery.replace(" ","+")}`
     return client.get(key)
 }
 

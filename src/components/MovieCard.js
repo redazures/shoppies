@@ -38,6 +38,7 @@ const MovieCard = ({ el, nominatedContainer, onPress, }) =>{
             onMouseEnter={()=>{
                 setOnHover(true)
                 !nominatedContainer && setDisplayNominate("Nominate " + Title)
+                nominatedContainer && setDisplayNominate(Title)
             }}
             onMouseLeave={()=>{
                 setOnHover(false)

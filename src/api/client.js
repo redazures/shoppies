@@ -2,7 +2,7 @@ import { create } from "apisauce"
 
 
 const apiClient = create({
-    baseURL: "http://www.omdbapi.com/"
+    baseURL: "https://www.omdbapi.com/"
 })
 
 export default apiClient
