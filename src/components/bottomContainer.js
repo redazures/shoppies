@@ -1,4 +1,4 @@
-import React,{ useContext, useEffect } from 'react'
+import React,{ useContext  } from 'react'
 import MoviesContainer from './MoviesContainer'
 import QueryContext from './contexts/QueryContext'
 
