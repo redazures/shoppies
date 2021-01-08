@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getMovies } from '../api/apiCalls'
 
-
 import BottomContainer from '../components/BottomContainer'
 import Header from '../components/Header'
 import QueryContext from "../components/contexts/QueryContext";
