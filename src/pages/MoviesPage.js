@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { getMovies } from '../api/apiCalls'
 
-import Header from '../components/Header'
-import SearchBar from '../components/SearchBar'
-
 import BottomContainer from '../components/BottomContainer'
+import Header from '../components/Header'
 import QueryContext from "../components/contexts/QueryContext";
+import SearchBar from '../components/SearchBar'
 
 import '../styles/moviesPage.css'
 
