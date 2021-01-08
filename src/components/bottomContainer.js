@@ -6,7 +6,7 @@ const Container = ({ movies }) => {
     const { nominated, setNominated } = useContext(QueryContext)
 
     const nominateHandler = (el) =>{
-        if(!nominated.includes(el)){
+        if(!nominated.includes(el) && nominated.length<5){
             nominated.push(el)
         }
     }

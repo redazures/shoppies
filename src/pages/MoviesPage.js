@@ -15,24 +15,27 @@ const MoviesContainer = () =>{
     const [ search, setSearch ] = useState("")
     const [ displayNominate, setDisplayNominate ] = useState("")
     const [ nominated, setNominated ] = useState([])
-
-    const populateMovies = useApi(getMovies)
-
-    const populate = ()=>{
-        setMovies(data)
+    
+    const populate = async ()=>{
+        console.log("this is where it begins")
+        if(!search) return
+        const response = await getMovies(movieQuery)
+        console.log(response.data.Search)
+        setMovies(response.data.Search)
+        console.log("this is where it ends")
     }
 
     useEffect(()=>{
-        console.log("only run once")
         populate()
-    },[])
-    
+    },[movieQuery])
+
     useEffect(()=>{
         console.log("this is running")
-        const timeOutSearch = setTimeout(() => setMovieQuery(search),500);
+        const timeOutSearch = setTimeout(() => setMovieQuery(search),1000);
         return () => clearTimeout(timeOutSearch)
     },[search])
 
+    console.log(movies)
     const width = window.innerWidth
     return(
         <QueryContext.Provider value={{ setDisplayNominate, nominated, setNominated }}>
