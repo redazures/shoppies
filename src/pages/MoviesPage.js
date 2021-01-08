@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { getMovies } from '../api/apiCalls'
 
+
 import BottomContainer from '../components/BottomContainer'
 import Header from '../components/Header'
 import QueryContext from "../components/contexts/QueryContext";
 import SearchBar from '../components/SearchBar'
 
+
 import '../styles/moviesPage.css'
+import CircularIndeterminate from '../components/CircularIndeterminate';
 
 const MoviesContainer = () =>{
     const [ movies, setMovies ] = useState([])
@@ -14,10 +17,9 @@ const MoviesContainer = () =>{
     const [ search, setSearch ] = useState("")
     const [ displayNominate, setDisplayNominate ] = useState("")
     const [ nominated, setNominated ] = useState(JSON.parse(localStorage.getItem("data")) || [])
-    
+
     const populate = async ()=>{
         if(!search) return
-        console.log("searching........  ")
         const response = await getMovies(movieQuery)
         setMovies(response.data.Search)
     }
@@ -35,8 +37,8 @@ const MoviesContainer = () =>{
     return(
         <QueryContext.Provider value={{ setDisplayNominate, nominated, setNominated, setMovieQuery  }}>
             <Header>{width>1000 ? "Shoppies: Why Spaceballs is the best movie of all time" : "Shoppies"}</Header>
-            <SearchBar ssearch={search} setSearch={setSearch} />
-            <div className="output"><span>{ (movieQuery && !displayNominate) ? `Searched for ${movieQuery}`: displayNominate ||null }</span></div>
+            <SearchBar search={search} setSearch={setSearch} />
+            <div className="output"><span>{search && movies.length===0 && <CircularIndeterminate/>}</span><span>{ (movieQuery && !displayNominate) ? `Searched for ${movieQuery}`: displayNominate ||null }</span></div>
             <BottomContainer movies={movies}/>
         </QueryContext.Provider>
     )
