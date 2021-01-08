@@ -1,5 +1,5 @@
 import React from 'react'
-import MoviesPage from './pages/MoviesPage'
+import MoviesShowPage from './pages/MoviesShowPage'
 
 import './styles/App.css';
 
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <MoviesPage/>
+      <MoviesShowPage/>
     </div>
   );
 }
