@@ -1,13 +1,26 @@
-import React from 'react'
+import React,{ useContext } from 'react'
 import MoviesContainer from './MoviesContainer'
-
-const favs = JSON.parse(localStorage.getItem("favs") || "[]");
+import QueryContext from './contexts/QueryContext'
 
 const Container = ({ movies }) => {
+    const { nominated, setNominated } = useContext(QueryContext)
+
+    const nominateHandler = (el) =>{
+        if(!nominated.includes(el)){
+            nominated.push(el)
+        }
+    }
+
+    const removeHandler = (obj) =>{
+        console.log(obj,nominated)
+        const newArray=nominated.filter(el=>el.imdbID!==obj.imdbID)
+        setNominated(newArray)
+    }
+
     return(
         <div className='bottomContainer'>
-            <MoviesContainer movies={movies} favs={favs} name="Nominate A Movie"/>
-            <MoviesContainer favs={favs} name="Nominated Movies"/>
+            <MoviesContainer movies={movies} name="Nominate A Movie" onPress={nominateHandler}/>
+            <MoviesContainer movies={nominated} name="Nominated Movies" onPress={removeHandler} nominatedContainer={true}/>
         </div>
     )
 }
