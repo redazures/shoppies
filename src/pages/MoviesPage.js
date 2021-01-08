@@ -16,12 +16,10 @@ const MoviesContainer = () =>{
     const [ nominated, setNominated ] = useState([])
     
     const populate = async ()=>{
-        console.log("this is where it begins")
         if(!search) return
+        console.log("searching........  ")
         const response = await getMovies(movieQuery)
-        console.log(response.data.Search)
         setMovies(response.data.Search)
-        console.log("this is where it ends")
     }
 
     useEffect(()=>{
@@ -37,10 +35,10 @@ const MoviesContainer = () =>{
     console.log(movies)
     const width = window.innerWidth
     return(
-        <QueryContext.Provider value={{ setDisplayNominate, nominated, setNominated }}>
+        <QueryContext.Provider value={{ setDisplayNominate, nominated, setNominated, setMovieQuery  }}>
             <Header>{width>1000 ? "Shoppies: Why Spaceballs is the best movie of all time" : "Shoppies"}</Header>
             <SearchBar ssearch={search} setSearch={setSearch} />
-            <div className="output"><span>{movieQuery ? `Searching for ${movieQuery.replace(" ","+")}`: displayNominate ||null }</span></div>
+            <div className="output"><span>{ (movieQuery && !displayNominate) ? `Searched for ${movieQuery}`: displayNominate ||null }</span></div>
             <BottomContainer movies={movies}/>
         </QueryContext.Provider>
     )

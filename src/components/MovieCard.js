@@ -5,7 +5,7 @@ import '../styles/movieCard.css'
 
 const defaultPoster = "https://pyxis.nymag.com/v1/imgs/50c/2ad/eed491e2a107c7446b014ba2f92efecd04-14-dumb-dumber-to.rsquare.w700.jpg"
 
-const MovieCard = ({ el, nominatedContainer, onPress }) =>{
+const MovieCard = ({ el, nominatedContainer, onPress, }) =>{
     const [ onHover, setOnHover ] = useState(false)
     const { setDisplayNominate, nominated } = useContext(QueryContext)
     const { Title, Year, Poster } = el
