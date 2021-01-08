@@ -28,3 +28,5 @@ const BottomContainer = ({ movies }) => {
 }
 
 export default BottomContainer 
+
+//there is something about this comtainer that will not change
