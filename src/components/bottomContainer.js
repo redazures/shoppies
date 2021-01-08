@@ -4,10 +4,11 @@ import QueryContext from './contexts/QueryContext'
 
 const BottomContainer = ({ movies }) => {
     const { nominated, setNominated } = useContext(QueryContext)
-    
+
     const nominateHandler = (el) =>{
         if(!nominated.includes(el) && nominated.length<5){
             nominated.push(el)
+            localStorage.setItem("data", JSON.stringify(nominated));
         }
     }
 
@@ -15,6 +16,7 @@ const BottomContainer = ({ movies }) => {
         console.log(obj,nominated)
         const newArray=nominated.filter(el=>el.imdbID!==obj.imdbID)
         setNominated(newArray)
+        localStorage.setItem("data", JSON.stringify(nominated));
     }
 
     return(

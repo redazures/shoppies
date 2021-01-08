@@ -12,7 +12,7 @@ const MovieCard = ({ el, nominatedContainer, onPress, }) =>{
 
     const titleAdjusted =()=>{
         var adjustedtitle = Title
-        if(Title.length>32) {
+        if(Title && Title.length>32) {
             adjustedtitle = Title.substr(0,26)
             adjustedtitle = adjustedtitle.substr(0, Math.min(adjustedtitle.length, adjustedtitle.lastIndexOf(" "))) + "..."
         }

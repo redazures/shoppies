@@ -13,7 +13,7 @@ const MoviesContainer = () =>{
     const [ movieQuery, setMovieQuery ] = useState("")
     const [ search, setSearch ] = useState("")
     const [ displayNominate, setDisplayNominate ] = useState("")
-    const [ nominated, setNominated ] = useState([])
+    const [ nominated, setNominated ] = useState(JSON.parse(localStorage.getItem("data")) || [])
     
     const populate = async ()=>{
         if(!search) return
@@ -27,12 +27,10 @@ const MoviesContainer = () =>{
     },[movieQuery])
 
     useEffect(()=>{
-        console.log("this is running")
         const timeOutSearch = setTimeout(() => setMovieQuery(search),1000);
         return () => clearTimeout(timeOutSearch)
     },[search])
 
-    console.log(movies)
     const width = window.innerWidth
     return(
         <QueryContext.Provider value={{ setDisplayNominate, nominated, setNominated, setMovieQuery  }}>
