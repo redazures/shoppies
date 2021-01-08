@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CircularIndeterminate from '../components/CircularIndeterminate';
 import { getMovies } from '../api/apiCalls'
 
 import BottomContainer from '../components/BottomContainer'
@@ -6,9 +7,7 @@ import Header from '../components/Header'
 import QueryContext from "../components/contexts/QueryContext";
 import SearchBar from '../components/SearchBar'
 
-
 import '../styles/moviesPage.css'
-import CircularIndeterminate from '../components/CircularIndeterminate';
 
 const MoviesContainer = () =>{
     const [ movies, setMovies ] = useState([])
