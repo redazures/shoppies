@@ -9,3 +9,5 @@ const apiKey = "XCODEX"
 export default apiKey
 
 Thank you for using this repo
+
+Please check out the hover feature on the cards. I think it is pretty cool. 
