@@ -1,8 +1,8 @@
-import React,{ useContext } from 'react'
+import React,{ useContext, useEffect } from 'react'
 import MoviesContainer from './MoviesContainer'
 import QueryContext from './contexts/QueryContext'
 
-const Container = ({ movies }) => {
+const BottomContainer = ({ movies }) => {
     const { nominated, setNominated } = useContext(QueryContext)
 
     const nominateHandler = (el) =>{
@@ -25,4 +25,4 @@ const Container = ({ movies }) => {
     )
 }
 
-export default Container 
+export default BottomContainer 
