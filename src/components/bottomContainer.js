@@ -14,9 +14,9 @@ const BottomContainer = ({ movies }) => {
 
     const removeHandler = (obj) =>{
         console.log(obj,nominated)
-        const newArray=nominated.filter(el=>el.imdbID!==obj.imdbID)
+        const newArray=nominated.filter(el=>el.Title!==obj.Title)
         setNominated(newArray)
-        localStorage.setItem("data", JSON.stringify(nominated));
+        localStorage.setItem("data", JSON.stringify(newArray));
     }
 
     return(

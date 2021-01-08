@@ -19,6 +19,7 @@ const MoviesContainer = () =>{
     const populate = async ()=>{
         if(!search) return
         const response = await getMovies(movieQuery)
+        if (!response.ok) return setMovieQuery(movieQuery.split("+")[0])
         setMovies(response.data.Search)
     }
 
