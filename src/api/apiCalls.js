@@ -1,10 +1,11 @@
   import client from './client'
   import apiKey from '../config/config'
 
-const key=`?apikey=${apiKey}&s=harry+potter`
 
-const getMovies = () => {
 
+const getMovies = (movieQuery) => {
+  const key=`?apikey=${apiKey}&s=${movieQuery.replace(" ","+")}`
+  console.log(key)
     return client.get(key)
 }
 

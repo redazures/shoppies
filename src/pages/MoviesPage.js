@@ -4,7 +4,7 @@ import { getMovies } from '../api/apiCalls'
 import Header from '../components/Header'
 import SearchBar from '../components/SearchBar'
 import useApi from '../components/hooks/useApi'
-import BottomContainer from '../components/BottomContainer'
+import BottomContainer from '../components/bottomContainer'
 import QueryContext from "../components/contexts/QueryContext";
 
 import '../styles/moviesPage.css'
@@ -29,7 +29,7 @@ const MoviesContainer = () =>{
     
     useEffect(()=>{
         console.log("this is running")
-        const timeOutSearch = setTimeout(() => setMovieQuery(search),500);
+        const timeOutSearch = setTimeout(() => setMovieQuery(search),1000);
         return () => clearTimeout(timeOutSearch)
     },[search])
 
