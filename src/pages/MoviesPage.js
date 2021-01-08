@@ -3,7 +3,6 @@ import { getMovies } from '../api/apiCalls'
 
 import Header from '../components/Header'
 import SearchBar from '../components/SearchBar'
-import useApi from '../components/hooks/useApi'
 import BottomContainer from '../components/BottomContainer'
 import QueryContext from "../components/contexts/QueryContext";
 
