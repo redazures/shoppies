@@ -13,8 +13,8 @@ const SearchBar = ({ search, setSearch }) => (
             name="search" 
             disableUnderline   
             autoFocus 
-            value={ search } 
-            onChange={ e => setSearch(e.target.value) }
+            value=      { search } 
+            onChange=   { e => setSearch(e.target.value) }
             startAdornment={
                 <InputAdornment position="start">
                     <Search/>

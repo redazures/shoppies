@@ -2,7 +2,7 @@ import React,{ useContext  } from 'react'
 import MoviesContainer from './MoviesContainer'
 import QueryContext from './contexts/QueryContext'
 
-const BottomContainer = ({ movies }) => {
+const SubMoviesContainer = ({ movies }) => {
     const { nominated, setNominated } = useContext(QueryContext)
 
     const nominateHandler = (el) =>{
@@ -27,6 +27,6 @@ const BottomContainer = ({ movies }) => {
     )
 }
 
-export default BottomContainer 
+export default SubMoviesContainer 
 
 //there is something about this comtainer that will not change
