@@ -11,6 +11,28 @@ div.searchWrapper{
     margin-bottom: 5px;
 }
 
+div.bruceBanner{
+    position: fixed;
+    left: 0;
+    top:0;
+    background-color:var(--light);
+    border-style: groove;
+    border-color: var(--secondary);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: var(--primary);
+}
+
+.resetButton{
+    margin-left: 30px;
+    border-radius: 50px;
+    background-color: red;
+    margin-right: 5px;
+}
+
 .searchInput{
     width: 100%;
     border: style;
